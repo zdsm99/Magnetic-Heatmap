@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Magnetic Heatmap</string>
+    <string name="statusOn">ON</string>
+    <string name="statusOff">OFF</string>
 </resources>
