@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:contentDescription="@string/backDescription"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_arrow" />
+
+    <TextView
+        android:id="@+id/settingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/settingsText"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/languageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/languageText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsText" />
+
+    <RadioGroup
+        android:id="@+id/radioLang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languageText">
+
+        <RadioButton
+            android:id="@+id/radioLangPol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/langPolish"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioLangEng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/langEnglish"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/gridSizeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/gridSizeText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioLang" />
+
+    <EditText
+        android:id="@+id/gridSizeNum"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:autofillHints="none"
+        android:ems="10"
+        android:hint="@string/defaultGridSizeValue"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/gridSizeText"
+        app:layout_constraintBottom_toBottomOf="@+id/gridSizeSlider"
+        app:layout_constraintStart_toEndOf="@+id/gridSizeSlider"
+        app:layout_constraintTop_toTopOf="@+id/gridSizeSlider" />
+
+    <TextView
+        android:id="@+id/defaultZoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/defaultZoomText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startZoomSlider" />
+
+    <EditText
+        android:id="@+id/defaultZoomNum"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:autofillHints="none"
+        android:ems="10"
+        android:hint="@string/defaultZoomValue"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/defaultZoom"
+        app:layout_constraintBottom_toBottomOf="@+id/defaultZoomSlider"
+        app:layout_constraintStart_toEndOf="@+id/defaultZoomSlider"
+        app:layout_constraintTop_toTopOf="@+id/defaultZoomSlider" />
+
+    <TextView
+        android:id="@+id/startZoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/startZoomText"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridSizeSlider" />
+
+    <EditText
+        android:id="@+id/startZoomNum"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:autofillHints="none"
+        android:ems="10"
+        android:hint="@string/startZoomValue"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/startZoom"
+        app:layout_constraintBottom_toBottomOf="@+id/startZoomSlider"
+        app:layout_constraintStart_toEndOf="@+id/startZoomSlider"
+        app:layout_constraintTop_toTopOf="@+id/startZoomSlider" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/gridSizeSlider"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/gridSizeSliderDesc"
+        android:stepSize="0.1"
+
+        android:valueFrom="1"
+        android:valueTo="3"
+        app:layout_constraintStart_toStartOf="@+id/gridSizeText"
+        app:layout_constraintTop_toBottomOf="@+id/gridSizeText" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/startZoomSlider"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/startZoomSliderDesc"
+        android:stepSize="0.1"
+
+        android:valueFrom="0"
+        android:valueTo="25"
+        app:layout_constraintStart_toStartOf="@+id/startZoom"
+        app:layout_constraintTop_toBottomOf="@+id/startZoom" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/defaultZoomSlider"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/defaultZoomSliderDesc"
+        android:stepSize="0.1"
+
+        android:valueFrom="0"
+        android:valueTo="25"
+        app:layout_constraintStart_toStartOf="@+id/defaultZoom"
+        app:layout_constraintTop_toBottomOf="@+id/defaultZoom" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/apply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
